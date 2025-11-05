@@ -2,29 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Shooting: MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject bullet; //Снаряд
-    public Transform firePoint; //Точка, с которой будут отправляться снаряды и лучи
+    public float speed;
+    public float lifetime;
+    private float distance;
+    public int damage;
+    public LayerMask isSolid;
 
-    public LineRenderer lineRenderer; //Луч
-
-    void ShootBullet()
+    private void Start()
     {
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightControl)) //Если игрок нажал на правый Ctrl
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, 1, isSolid);
+
+        if (hitInfo.collider != null)
         {
-            //Вызов метода стрельбы снарядами
-            ShootBullet();
-
-            //Вызов метода стрельбы лучами
-            //StartCoroutine(Shoot());
-            //Выберите один из них
+            if (hitInfo.collider.CompareTag("Enemy"))
+            {
+                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+            }
+            Destroy(gameObject);
         }
+        //if (transform.position.x > 150)
+        //{
+        //    Destroy(gameObject);
+        //}
+
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
+
 }

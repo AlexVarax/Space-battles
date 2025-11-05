@@ -61,8 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Hero.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
+    <Compile Include="Assets\Script\EnemyController.cs" />
     <Compile Include="Assets\Script\Shooting.cs" />
     <Compile Include="Assets\Script\FireScript.cs" />
+    <Compile Include="Assets\Script\FirePoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
