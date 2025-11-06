@@ -23,14 +23,11 @@ public class EnemyController : MonoBehaviour
     {
         if (timeBtwShots <= 0)
         {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                var temp = Instantiate(enemy, new Vector3(11, random.Next(-4, 4), 0), new Quaternion(0, 0, 0, 0));
-                temp.GetComponent<Enemy>().hp = random.Next(3, 10);
-                temp.GetComponent<Enemy>().speed = random.Next(2, 10);
+            var temp = Instantiate(enemy, new Vector3(11, random.Next(-4, 4), 0), new Quaternion(0, 0, 0, 0));
+            temp.GetComponent<Enemy>().hp = random.Next(3, 10);
+            temp.GetComponent<Enemy>().speed = random.Next(2, 10);
 
-                timeBtwShots = startTimeBtwShots;
-            }
+            timeBtwShots = startTimeBtwShots;
         }
         else
         {

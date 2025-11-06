@@ -6,7 +6,6 @@ public class Shooting: MonoBehaviour
 {
     public float speed;
     public float lifetime;
-    private float distance;
     public int damage;
     public LayerMask isSolid;
 
@@ -26,10 +25,10 @@ public class Shooting: MonoBehaviour
             }
             Destroy(gameObject);
         }
-        //if (transform.position.x > 150)
-        //{
-        //    Destroy(gameObject);
-        //}
+        if (transform.position.x > 10)
+        {
+            Destroy(gameObject);
+        }
 
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }

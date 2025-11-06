@@ -24,7 +24,9 @@ public class FirePoint : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                var temp = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                temp.GetComponent<Shooting>().speed = 10;
+
                 timeBtwShots = startTimeBtwShots;
             }
         }
