@@ -1,5 +1,9 @@
 # Space Battles
 
+https://github.com/user-attachments/assets/955db970-cd97-41f9-a645-877cbaa08015
+
+<br>
+
 **Space Battles** — это динамичная 2D-стратегия с элементами аркады, созданная в Unity. Проект разрабатывается с прицелом на публикацию в экосистеме Yandex Games.
 
 ---
